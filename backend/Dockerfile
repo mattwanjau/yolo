@@ -1,5 +1,5 @@
 
-FROM node:13-alpine
+FROM node:14-alpine
 # Set the working directory to /backend
 WORKDIR /backend
 

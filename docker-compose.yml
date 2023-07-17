@@ -4,7 +4,8 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: mattwanjau/yolo-client:v1.0.0
+      tags: 
+        - mattwanjau/yolo-client:v1.0.0
     ports:
       - 3000:3000
     depends_on:
@@ -16,7 +17,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: mattwanjau/yolo-backend:v1.0.0
+      tags: 
+        - mattwanjau/yolo-backend:v1.0.0
     ports:
       - 5000:5000
     depends_on:
