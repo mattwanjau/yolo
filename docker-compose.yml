@@ -4,8 +4,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-      tags: 
-        - mattwanjau/yolo-client:v1.0.0
+    image: mattwanjau/yolo-client:v1.0.2
     ports:
       - 3000:3000
     depends_on:
@@ -17,8 +16,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-      tags: 
-        - mattwanjau/yolo-backend:v1.0.0
+    image: mattwanjau/yolo-backend:v1.0.2
     ports:
       - 5000:5000
     depends_on:
@@ -34,6 +32,12 @@ services:
       - 27017:27017
     volumes:
       - mongo-data:/data/db
+    networks:
+      - yolo-network
+    
+networks:
+  yolo-network:
+    driver: bridge
 
 volumes:
   mongo-data:
