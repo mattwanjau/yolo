@@ -20,18 +20,18 @@ services:
     ports:
       - 5000:5000
     depends_on:
-      - mongo
+      - mongodb
     environment:
-      - DATABASE_URL=mongodb://mongo:27017
+      - DATABASE_URL=mongodb://mongodb:27017
     stdin_open: true
     tty: true
 
-  mongo:
-    image: mongo:4.4
+  mongodb:
+    image: mongo
     ports:
       - 27017:27017
     volumes:
-      - mongo-data:/data/db
+      - mongo-data:/data/dbe
     networks:
       - yolo-network
     
