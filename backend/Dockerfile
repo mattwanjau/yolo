@@ -1,10 +1,10 @@
 
-FROM node:14-alpine
+FROM node:13-alpine
 # Set the working directory to /backend
 WORKDIR /backend
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY package.json .
 
 # Install app dependencies
 RUN npm install
@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expose the port the app will listen on
-EXPOSE 8091
+EXPOSE 5000
 
 # Start the app
 CMD ["npm", "start"]

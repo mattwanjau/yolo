@@ -4,22 +4,30 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    image: mattwanjau/yolo-client:v1.0.0
     ports:
       - 3000:3000
     depends_on:
       - backend
+    stdin_open: true
+    tty: true
 
   backend:    
     build:
       context: ./backend
       dockerfile: Dockerfile
+    image: mattwanjau/yolo-backend:v1.0.0
     ports:
-      - 8091:8091
+      - 5000:5000
     depends_on:
       - mongo
+    environment:
+      - DATABASE_URL=mongodb://mongo:27017
+    stdin_open: true
+    tty: true
 
   mongo:
-    image: mongo:latest
+    image: mongo:4.4
     ports:
       - 27017:27017
     volumes:

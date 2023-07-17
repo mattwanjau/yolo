@@ -1,11 +1,11 @@
 
-FROM node:14-alpine
+FROM node:13-alpine
 
 # Set the working directory to /client
 WORKDIR /client
 
 # Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+COPY package.json .
 
 # Install dependencies
 RUN npm install
