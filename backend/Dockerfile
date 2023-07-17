@@ -1,6 +1,5 @@
 
 FROM node:14-alpine
-
 # Set the working directory to /backend
 WORKDIR /backend
 
@@ -14,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Expose the port the app will listen on
-EXPOSE 5000
+EXPOSE 8091
 
 # Start the app
 CMD ["npm", "start"]
