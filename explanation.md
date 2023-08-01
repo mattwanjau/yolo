@@ -17,13 +17,17 @@
             ansible.playbook = "playbook.yml"
         end 
       ```
-      Add required ports for the app
-  3. Playbook
+      Add required ports for yolo app
+       ```
+             config.vm.network "forwarded_port", guest: 3000, host: 3000, protocol: "tcp"
+             config.vm.network "forwarded_port", guest: 5000, host: 5000, protocol: "tcp" 
+       ```
+  4. Playbook
      1. Use ` vars_files:       - vars.yml ` to include vars file
      2. Use `become: true` to run with priviledges
      3. Define respective roles
        
-  4. Initialize roles 
+  5. Initialize roles 
       Make Roles directory then cd into it
       ```
       ansible-galaxy init <roleName>
