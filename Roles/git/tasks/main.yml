@@ -1,0 +1,11 @@
+---
+- name: installing git
+  apt:
+    name: git
+    state: present
+
+- name: Repository Cloning
+      git:
+        repo: "{{ repo }}"
+        version: "{{ yolo_version }}"
+        dest: "{{ dest }}"
