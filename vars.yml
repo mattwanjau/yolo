@@ -1,0 +1,5 @@
+repo: "https://github.com/mattwanjau/yolo"
+#branch
+branch: "master"
+#repo destination
+dest: "/home/mattwanjau/yolo"
