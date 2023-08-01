@@ -4,8 +4,8 @@
     name: git
     state: present
 
-- name: Repository Cloning
-      git:
-        repo: "{{ repo }}"
-        version: "{{ yolo_version }}"
-        dest: "{{ dest }}"
+#- name: gitclone
+- git:
+  repo: "{{ repo }}"
+  version: "{{ branch }}"
+  dest: "{{ dest }}"
