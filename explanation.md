@@ -42,7 +42,7 @@
       vagrant up
       ```
 
->As of 2023-08-01 12:05 pm (deadline) the VM runs but no evidence of docker step completing. 
+
       
  
   
