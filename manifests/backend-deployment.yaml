@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: yolo-backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: yolo-backend
+  template:
+    metadata:
+      labels:
+        app: yolo-backend
+    spec:
+      containers:
+      - name: yolo-backend
+        image: mattwanjau/yolo-backend:V2.0.0
+        env:
+          - name: PORT
+            value: "5000"
+          - name: MONGODB_URI
+            value: "mongodb://mongodb.default.svc.cluster.local/yolomy"      
+        ports:
+        - containerPort: 5000

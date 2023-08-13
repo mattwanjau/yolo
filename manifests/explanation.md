@@ -10,15 +10,24 @@
   2. Create manifests files
 
       * mongodb-service.yaml - to create the headless mongo db service
-      * ansible.cfg -this states our inventory location
-      * playbook.yml - this has our main play
-      * vars.yml - we define our variables in this file and import them into playbook.yml
+      * mongodb-statefulset.yaml -Stateful set for mongo db
+      * client-deployment.yaml - describes  our deployment nodes for `mattwanjau/yolo-client:V2.0.0` container(s)
+      * client-service.yml - specifies a port to access the client
+      * client-deployment.yaml - describes  our deployment for `mattwanjau/yolo-client:V2.0.0` container(s)
+      * backend-service.yaml - describes
 
-  3. Apply mongodb-service.yaml
-  
-     Add the playbook file to the vagrant file
-     ```
-      config.vm.provision :ansible do |ansible|
-            ansible.playbook = "playbook.yml"
-        end 
-      ```
+  3. Use kubectl to apply files 
+     * Apply mongodb-service.yaml
+        ```
+        kubectl apply -f manifests/mongodb-service.yaml
+        ```
+        run `kubectl get svc` to verifyservice mongo db has been created
+     * Apply mongodb-statefulset.yaml to create stateful pod (single).
+        ```
+        kubectl apply -f manifests/mongodb-statefulset.yaml
+        ```
+       run   `kubctl get pv` to verify existence of persistene volume
+     *  
+
+       
+      
