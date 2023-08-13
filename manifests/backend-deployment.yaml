@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: yolo-backend
-        image: mattwanjau/yolo-backend:V2.0.0
+        image: mattwanjau/yolo-backend:v2.0.0
         env:
           - name: PORT
             value: "5000"
