@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: yolo-client
-        image: mattwanjau/yolo-client:V2.0.0
+        image: mattwanjau/yolo-client:v2.0.0
         env:
           - name: PORT
             value: "3000"

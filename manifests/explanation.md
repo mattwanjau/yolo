@@ -30,9 +30,9 @@
      *  Apply  both deployment and service files
         ```
         kubectl apply -f manifests/backend-service.yaml 
-        kubectl apply -f manifests/client/backend-service.yaml
+        kubectl apply -f manifests/backend-deployment.yaml
         kubectl apply -f manifests/client-service.yaml 
-        kubectl apply -f manifests/client/client-service.yaml
+        kubectl apply -f manifests/client-deployment.yaml
         ```
 
        
