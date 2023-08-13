@@ -13,8 +13,8 @@
       * mongodb-statefulset.yaml -Stateful set for mongo db
       * client-deployment.yaml - describes  our deployment nodes for `mattwanjau/yolo-client:V2.0.0` container(s)
       * client-service.yml - specifies a port to access the client
-      * client-deployment.yaml - describes  our deployment for `mattwanjau/yolo-client:V2.0.0` container(s)
-      * backend-service.yaml - describes
+      * backend-deployment.yaml - describes  our deployment for `mattwanjau/yolo-backend:V2.0.0` container(s)
+      * backend-service.yaml - specifies a port to access the backend
 
   3. Use kubectl to apply files 
      * Apply mongodb-service.yaml
@@ -27,7 +27,13 @@
         kubectl apply -f manifests/mongodb-statefulset.yaml
         ```
        run   `kubctl get pv` to verify existence of persistene volume
-     *  
+     *  Apply  both deployment and service files
+        ```
+        kubectl apply -f manifests/backend-service.yaml 
+        kubectl apply -f manifests/client/backend-service.yaml
+        kubectl apply -f manifests/client-service.yaml 
+        kubectl apply -f manifests/client/client-service.yaml
+        ```
 
        
       
