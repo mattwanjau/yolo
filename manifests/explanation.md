@@ -35,15 +35,19 @@
         kubectl apply -f manifests/client-deployment.yaml
         ```
 
-  Service  Creation  Links\
+  Service  Creation  Links
         ```
-                    NAME                   TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)          AGE
-                    kubernetes             ClusterIP      10.20.0.1     <none>          443/TCP          23h
-                    mongodb                ClusterIP      None          <none>          27017/TCP        15h
-                    yolo-backend-service   LoadBalancer   10.20.15.92   34.91.142.200   5000:30892/TCP   15h
-                    yolo-client-service    LoadBalancer   10.20.13.59   34.32.244.73    3000:32367/TCP   14h
+          NAME                   TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)          AGE
+          kubernetes             ClusterIP      10.20.0.1     <none>          443/TCP          23h
+          mongodb                ClusterIP      None          <none>          27017/TCP        15h
+          yolo-backend-service   LoadBalancer   10.20.15.92   34.91.142.200   5000:30892/TCP   15h
+          yolo-client-service    LoadBalancer   10.20.13.59   34.32.244.73    3000:32367/TCP   14h
         ```
- \ Frontend\
-34.32.244.73\
+ 
+  
+  
+  Frontend  
+
+    `34.32.244.73`
        
       
